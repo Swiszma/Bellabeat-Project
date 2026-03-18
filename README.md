@@ -5,7 +5,7 @@
 - [Phase 1: Ask Phase](ask-phase)
 - [Phase 2: Prepare Phase](prepare-phase)
 - [Phase 3: Process Phase](process-phase)
-- [Phase 4: Analyze Phase](#analyze-phase)
+- [Phase 4: Analyze Phase](analyze-phase)
 - [Phase 5: Share Phase](share-phase)
 - [Phase 6: Act Phase](act-phase)
 
