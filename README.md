@@ -1,11 +1,11 @@
 # Bellabeat Smart Device Analysis
 
 ### Table of Contents
-- [Project Overview](#project-overview)
-- [Phase 1: Ask Phase](#ask-phase)
+- [Project Overview](project-overview)
+- [Phase 1: Ask Phase](ask-phase)
 - [Phase 2: Prepare Phase](prepare-phase)
 - [Phase 3: Process Phase](process-phase)
-- [Phase 4: Analyze Phase](analyze-phase)
+- [Phase 4: Analyze Phase](#analyze-phase)
 - [Phase 5: Share Phase](share-phase)
 - [Phase 6: Act Phase](act-phase)
 
@@ -52,4 +52,53 @@ Rigorously verified data integrity through targeted SQL sanity checks:
 - Data Discovery: Identified 3 duplicate rows in the sleep data, and 77 "Ghost Days" where users logged exactly 0 steps (indicating the device was not worn).
 See [SQL Querries Here](SQL-queries)
 
-### Analyze Phase
+### Phase 4: Analyze Phase
+To uncover behavioral trends and answer the CEO's guiding questions, targeted SQL queries were executed against the cleaned master_daily_activity and hourly_steps_clean tables.
+[you can find the SQL Quries here]()
+
+The analysis results are summarizes as follows:
+1. Users are highly consistent during the day, wearing the device for an average of 26 out of 31 days. However, sleep tracking plummeted. Out of 863 total tracked days, sleep was only recorded on 413 days. Users take the device off at night 52% of the time.
+2. When worn, users average 8,319 steps per day.
+3. Users are highly sedentary, sitting for an average of 16.0 hours per day.
+4. Activity peaks heavily on Tuesdays (8,949 steps) and Saturdays (8,947 steps).
+5. Sundays see the lowest activity (7,627 steps), indicating it is treated strictly as a rest day.
+6. Mondays see the highest amount of sedentary behavior, peaking at 16.5 hours of sitting.
+7. Identified two distinct hourly peaks in the 24-hour cycle. The "Lunch Break" Peak: A moderate spike in activity occurs between 12:00 PM and 2:00 PM. The "After-Work" Peak: The massive, undisputed peak of user activity occurs between 5:00 PM and 7:00 PM, hitting its absolute highest point at 18:00 (6:00 PM).
+
+### Share Phase
+Below is a snapshot of the Dashboard
+<img width="1378" height="742" alt="image" src="https://github.com/user-attachments/assets/637c8d8e-f2db-4109-a44e-ebe5630e88ab" />
+
+### Act Phase
+#### Recommendations
+To drive user engagement, improve consumer health outcomes, and optimize digital marketing spend, I recommend implementing the following four data-driven strategies within the Bellabeat App ecosystem.
+
+1. The "Pre-Peak" Push Notification Strategy (Time-Based Targeting)
+- The Data: User activity spikes sharply at 12:00 PM and peaks massively at 6:00 PM (18:00).
+- The Action: Bellabeat should shift away from generalized email blasts. Instead, program the Bellabeat App to send highly targeted push notifications exactly 30 minutes prior to these established peak hours.
+11:30 AM: "Almost lunchtime! Grab your walking shoes and hit your step goal."
+5:00 PM: "Work is almost over. Don't head to the couch yet...let's get that evening workout in!"
+
+2. The "Charge & Sleep" Campaign (Addressing the 52% Drop-off)
+- The Data: Users tracked 863 active daytime logs, but only 413 sleep logs. Users are removing the device at night 52% of the time, representing massive lost engagement.
+- The Action: We must determine if this is a behavioral habit (charging) or a physical design issue (discomfort).
+- In-App Questionnaire: Trigger a targeted, one-question survey in the Bellabeat App for users who frequently log 0 sleep minutes: "How comfortable is your device to sleep in?"
+- Product Design Opportunity: If the survey reveals a comfort issue, Urška Sršen’s design team can use this data to develop and market a softer, sleep-specific accessory band.
+- Behavioral Fix & Upsell: Implement an 8:00 PM "Wind Down" notification reminding users to charge their device. Use this notification to upsell the premium Bellabeat Membership, offering exclusive sleep-meditation audio tracks to listen to in bed.
+
+3. Combatting "Sedentary Monday" (Behavioral Intervention)
+- The Data: Users sit for an average of 15.95 hours a day, peaking at 16.5 hours on Mondays. They are exceeding the healthy 8-hour sedentary limit by over 100%.
+- The Action: Launch a "Beat the Desk" digital marketing campaign targeting office workers.
+- App Feature: Add an "Anti-Sedentary" feature to the app that gently vibrates the user's Bellabeat Leaf or Time watch if they have registered 0 steps for two consecutive hours between 9:00 AM and 5:00 PM.
+
+4. Synchronizing Ads with the "Weekly Rhythm" (Budget Optimization)
+- The Data: Activity peaks on Tuesdays and Saturdays, but plummets on Sundays.
+- The Action: Reallocate the digital marketing budget (Google Ads, Instagram, YouTube) to match consumer psychology.
+- Mon/Tue & Fri/Sat: Spend heavily on high-energy, active lifestyle ads and fitness challenges to capitalize on existing motivation.
+- Sundays: Slash the ad budget for fitness gear. Shift all Sunday marketing copy to focus on "Rest, Recovery, and Self-Care," heavily promoting the Bellabeat App's stress-tracking and mindfulness features.
+
+#### Next Steps & Additional Data Required
+To ensure these recommendations perfectly align with Bellabeat’s specific brand identity, the following next steps should be taken:
+- Demographic Verification: The public Kaggle dataset lacked gender demographics. Bellabeat must pull a sample of its own first-party female user data to verify if these exact hourly peaks (6:00 PM) hold true specifically for women.
+- A/B Testing: Roll out the "Pre-Peak" push notifications to a small test group of 5,000 app users for two weeks. Measure the actual percentage increase in steps before deploying the feature globally.
+
