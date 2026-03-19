@@ -1,15 +1,15 @@
 # Bellabeat Smart Device Analysis
 
 ### Table of Contents
-- [Project Overview](project-overview)
+- [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
 - [Tools and Uses](#tools-and-uses)
-- [Phase 1: Process Phase](#process-phase)
-- [Phase 2: Analyze Phase](#analyze-phase)
-- [Phase 3: Share Phase](#share-phase)
-- [Phase 4: Act Phase](#act-phase)
+- [Process Phase](#process-phase)
+- [Analyze Phase](#analyze-phase)
+- [Share Phase](#share-phase)
+- [Act Phase](#act-phase)
 
-### Poject Overview
+### Project Overview
 Bellabeat is a successful, high-tech manufacturer of health-focused smart products designed specifically to empower and inspire women. Founded by Urška Sršen and Sando Mur, the company has grown rapidly since 2013 by leveraging data on activity, sleep, stress, and reproductive health to inform their beautifully designed wellness technology.
 While currently a small company, the executive team believes there is significant potential to become a larger player in the global smart device market. They invest heavily in digital marketing—including Google Search, YouTube video ads, and active engagement across major social media platforms.
 
@@ -39,7 +39,7 @@ Before moving to the Process phase, the dataset was evaluated for credibility us
  - MySQL (Workbench): Engineered advanced SQL queries to validate data integrity (identifying and eliminating duplicates and "ghost" users), handle mixed 12hr/24hr time formats, and perform relational database merging using Composite Keys.
  - Microsoft Power BI: Architected an interactive, executive-facing Business Intelligence dashboard utilizing custom DAX measures, dynamic conditional formatting (benchmarked against CDC health standards), and a custom-built matrix calendar heatmap.
 
-### Phase 1: Process Phase
+### Process Phase
 Before importing data into a SQL database, the raw CSV files were inspected to correct critical formatting errors that would break SQL joins.
 - Primary Key Standardization: The Id column defaulted to scientific notation (e.g., 1.5E+09). This was converted to a standard numeric format (1503960366) across all files.
 - Date Standardization: The SleepDay column contained extraneous time strings (" 12:00:00 AM"). Find & Replace was used to isolate pure dates (MM/DD/YYYY).
@@ -52,7 +52,7 @@ Rigorously verified data integrity through targeted SQL sanity checks:
 - Data Discovery: Identified 3 duplicate rows in the sleep data, and 77 "Ghost Days" where users logged exactly 0 steps (indicating the device was not worn).
 See [SQL Querries Here](SQL-queries)
 
-### Phase 2: Analyze Phase
+### Analyze Phase
 To uncover behavioral trends and answer the CEO's guiding questions, targeted SQL queries were executed against the cleaned master_daily_activity and hourly_steps_clean tables.
 [you can find the SQL Quries here]()
 
@@ -65,11 +65,11 @@ The analysis results are summarizes as follows:
 6. Mondays see the highest amount of sedentary behavior, peaking at 16.5 hours of sitting.
 7. Identified two distinct hourly peaks in the 24-hour cycle. The "Lunch Break" Peak: A moderate spike in activity occurs between 12:00 PM and 2:00 PM. The "After-Work" Peak: The massive, undisputed peak of user activity occurs between 5:00 PM and 7:00 PM, hitting its absolute highest point at 18:00 (6:00 PM).
 
-### Phase 3: Share Phase
+### Share Phase
 Below is a snapshot of the Dashboard
 <img width="1378" height="742" alt="image" src="https://github.com/user-attachments/assets/637c8d8e-f2db-4109-a44e-ebe5630e88ab" />
 
-### Phase 4: Act Phase
+### Act Phase
 #### Recommendations
 To drive user engagement, improve consumer health outcomes, and optimize digital marketing spend, I recommend implementing the following four data-driven strategies within the Bellabeat App ecosystem.
 
