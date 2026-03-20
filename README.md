@@ -11,7 +11,7 @@
 
 ### Project Overview
 Bellabeat is a successful, high-tech manufacturer of health-focused smart products designed specifically to empower and inspire women. Founded by Urška Sršen and Sando Mur, the company has grown rapidly since 2013 by leveraging data on activity, sleep, stress, and reproductive health to inform their beautifully designed wellness technology.
-While currently a small company, the executive team believes there is significant potential to become a larger player in the global smart device market. They invest heavily in digital marketing—including Google Search, YouTube video ads, and active engagement across major social media platforms.
+While currently a small company, the executive team believes there is significant potential to become a larger player in the global smart device market. They invest heavily in digital marketing, including Google Search, YouTube video ads, and active engagement across major social media platforms.
 
 The core objective of this project is to analyze smart device fitness data to uncover high-level insights into how consumers are currently using their wellness trackers. These behavioral trends must then be applied to one specific Bellabeat product (the Bellabeat App) to generate data-driven, strategic recommendations that will optimize the company's future digital marketing strategy and unlock new avenues for growth.
 
@@ -52,6 +52,7 @@ Rigorously verified data integrity through targeted SQL sanity checks:
 - Data Discovery: Identified 3 duplicate rows in the sleep data, and 77 "Ghost Days" where users logged exactly 0 steps (indicating the device was not worn).
 [See SQL Queries Here](https://docs.google.com/document/d/1vvOy3jkLcEeu5tSUtB55LF1UDCKMA_vY/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
 
+
 ### Analyze Phase
 To uncover behavioral trends and answer the CEO's guiding questions, targeted SQL queries were executed against the cleaned master_daily_activity and hourly_steps_clean tables.
 [you can find the SQL Quries here](https://docs.google.com/document/d/10TeIYLkdP3Bw5FURfKeRk6nfh0fiXkyM/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
@@ -66,8 +67,9 @@ The analysis results are summarizes as follows:
 7. Identified two distinct hourly peaks in the 24-hour cycle. The "Lunch Break" Peak: A moderate spike in activity occurs between 12:00 PM and 2:00 PM. The "After-Work" Peak: The massive, undisputed peak of user activity occurs between 5:00 PM and 7:00 PM, hitting its absolute highest point at 18:00 (6:00 PM).
 
 ### Share Phase
-Below is a snapshot of the Dashboard
+Below is a snapshot of the Dashboard (you can as well see an attached video of the Dashboard on the file section)
 <img width="1378" height="742" alt="image" src="https://github.com/user-attachments/assets/637c8d8e-f2db-4109-a44e-ebe5630e88ab" />
+
 
 ### Act Phase
 #### Recommendations
