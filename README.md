@@ -50,11 +50,11 @@ Rigorously verified data integrity through targeted SQL sanity checks:
 - ID Length Check: Verified all IDs were exactly 10 digits (100% pass).
 - NULL Check: Checked primary keys and core metrics for missing values (0 NULLs found).
 - Data Discovery: Identified 3 duplicate rows in the sleep data, and 77 "Ghost Days" where users logged exactly 0 steps (indicating the device was not worn).
-See [SQL Querries Here](SQL-queries)
+[See SQL Queries Here](https://docs.google.com/document/d/1vvOy3jkLcEeu5tSUtB55LF1UDCKMA_vY/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
 
 ### Analyze Phase
 To uncover behavioral trends and answer the CEO's guiding questions, targeted SQL queries were executed against the cleaned master_daily_activity and hourly_steps_clean tables.
-[you can find the SQL Quries here]()
+[you can find the SQL Quries here](https://docs.google.com/document/d/10TeIYLkdP3Bw5FURfKeRk6nfh0fiXkyM/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
 
 The analysis results are summarizes as follows:
 1. Users are highly consistent during the day, wearing the device for an average of 26 out of 31 days. However, sleep tracking plummeted. Out of 863 total tracked days, sleep was only recorded on 413 days. Users take the device off at night 52% of the time.
