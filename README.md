@@ -4,6 +4,7 @@
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
 - [Tools and Uses](#tools-and-uses)
+- [Prepare Phase](#prepare-phase)
 - [Process Phase](#process-phase)
 - [Analyze Phase](#analyze-phase)
 - [Share Phase](#share-phase)
@@ -24,6 +25,12 @@ To prevent redundant analysis and focus purely on actionable, high-level busines
 2. sleepDay_merged.csv: Contains daily sleep logs. (To be joined to the Master Table)
 3. hourlySteps_merged.csv: Contains hourly breakdowns of steps to identify peak user activity times. (Kept separate to maintain granularity)
 
+ ### Tools and Uses
+ - Microsoft Excel: Utilized for initial raw data triage, structural formatting correction, and resolving complex regional date-format conflicts (US vs. Global formatting).
+ - MySQL (Workbench): Engineered advanced SQL queries to validate data integrity (identifying and eliminating duplicates and "ghost" users), handle mixed 12hr/24hr time formats, and perform relational database merging using Composite Keys.
+ - Microsoft Power BI: Architected an interactive, executive-facing Business Intelligence dashboard utilizing custom DAX measures, dynamic conditional formatting (benchmarked against CDC health standards), and a custom-built matrix calendar heatmap.
+
+### Prepare Phase
 #### Data Credibility & Bias (The ROCCC Framework)
 Before moving to the Process phase, the dataset was evaluated for credibility using the ROCCC framework (Reliable, Original, Comprehensive, Current, Cited):
 - R - Reliable (LOW): The sample size is only 33 unique users, which is not large enough to definitively represent the global fitness tech market with high confidence.
@@ -33,11 +40,6 @@ Before moving to the Process phase, the dataset was evaluated for credibility us
 - C - Cited (HIGH): The data source is well-documented and properly cited on Kaggle.
 
  Despite its limitations, this dataset provides a highly detailed snapshot of real-world fitness tracker usage. By identifying the behavioral correlations within this sample, we can generate the exact high-level trends requested to drive Bellabeat's marketing strategy, provided stakeholders are made aware of the demographic bias.
-
- ### Tools and Uses
- - Microsoft Excel: Utilized for initial raw data triage, structural formatting correction, and resolving complex regional date-format conflicts (US vs. Global formatting).
- - MySQL (Workbench): Engineered advanced SQL queries to validate data integrity (identifying and eliminating duplicates and "ghost" users), handle mixed 12hr/24hr time formats, and perform relational database merging using Composite Keys.
- - Microsoft Power BI: Architected an interactive, executive-facing Business Intelligence dashboard utilizing custom DAX measures, dynamic conditional formatting (benchmarked against CDC health standards), and a custom-built matrix calendar heatmap.
 
 ### Process Phase
 Before importing data into a SQL database, the raw CSV files were inspected to correct critical formatting errors that would break SQL joins.
