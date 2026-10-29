@@ -10,7 +10,7 @@
 - [Share Phase](#share-phase)
 - [Act Phase](#act-phase)
 
-### Project Overview
+## Project Overview
 Bellabeat is a successful, high-tech manufacturer of health-focused smart products designed specifically to empower and inspire women. Founded by Urška Sršen and Sando Mur, the company has grown rapidly since 2013 by leveraging data on activity, sleep, stress, and reproductive health to inform their beautifully designed wellness technology.
 While currently a small company, the executive team believes there is significant potential to become a larger player in the global smart device market. They invest heavily in digital marketing, including Google Search, YouTube video ads, and active engagement across major social media platforms.
 
@@ -19,7 +19,7 @@ The core objective of this project is to analyze smart device fitness data to un
 ### Data Sources
 The primary dataset for this analysis is the [FitBit Fitness Tracker Data](https://www.google.com/url?sa=E&q=https%3A%2F%2Fwww.kaggle.com%2Fdatasets%2Farashnic%2Ffitbit) , hosted publicly on Kaggle by user Mobius.
 
-#### Dataset Selection
+### Dataset Selection
 To prevent redundant analysis and focus purely on actionable, high-level business trends, the 18 files were triaged. The following three core files were selected for the ETL(Extract, Transform, Load) pipeline:
 1. dailyActivity_merged.csv: Contains daily summaries of steps, distance, calories, and activity intensities. (The Master Anchor Table)
 2. sleepDay_merged.csv: Contains daily sleep logs. (To be joined to the Master Table)
@@ -30,8 +30,8 @@ To prevent redundant analysis and focus purely on actionable, high-level busines
  - MySQL (Workbench): Engineered advanced SQL queries to validate data integrity (identifying and eliminating duplicates and "ghost" users), handle mixed 12hr/24hr time formats, and perform relational database merging using Composite Keys.
  - Microsoft Power BI: Architected an interactive, executive-facing Business Intelligence dashboard utilizing custom DAX measures, dynamic conditional formatting (benchmarked against CDC health standards), and a custom-built matrix calendar heatmap.
 
-### Prepare Phase
-#### Data Credibility & Bias (The ROCCC Framework)
+## Prepare Phase
+### Data Credibility & Bias (The ROCCC Framework)
 Before moving to the Process phase, the dataset was evaluated for credibility using the ROCCC framework (Reliable, Original, Comprehensive, Current, Cited):
 - R - Reliable (LOW): The sample size is only 33 unique users, which is not large enough to definitively represent the global fitness tech market with high confidence.
 - O - Original (LOW): This is third-party data collected via a distributed survey (Amazon Mechanical Turk), not first-party proprietary data directly from Fitbit.
@@ -41,7 +41,7 @@ Before moving to the Process phase, the dataset was evaluated for credibility us
 
  Despite its limitations, this dataset provides a highly detailed snapshot of real-world fitness tracker usage. By identifying the behavioral correlations within this sample, we can generate the exact high-level trends requested to drive Bellabeat's marketing strategy, provided stakeholders are made aware of the demographic bias.
 
-### Process Phase
+## Process Phase
 Before importing data into a SQL database, the raw CSV files were inspected to correct critical formatting errors that would break SQL joins.
 - Primary Key Standardization: The Id column defaulted to scientific notation (e.g., 1.5E+09). This was converted to a standard numeric format (1503960366) across all files.
 - Date Standardization: The SleepDay column contained extraneous time strings (" 12:00:00 AM"). Find & Replace was used to isolate pure dates (MM/DD/YYYY).
@@ -55,7 +55,7 @@ Rigorously verified data integrity through targeted SQL sanity checks:
 [See SQL Queries Here](https://docs.google.com/document/d/1vvOy3jkLcEeu5tSUtB55LF1UDCKMA_vY/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
 
 
-### Analyze Phase
+## Analyze Phase
 To uncover behavioral trends and answer the CEO's guiding questions, targeted SQL queries were executed against the cleaned master_daily_activity and hourly_steps_clean tables.
 [you can find the SQL Quries here](https://docs.google.com/document/d/10TeIYLkdP3Bw5FURfKeRk6nfh0fiXkyM/edit?usp=drive_link&ouid=117575260738791169612&rtpof=true&sd=true)
 
@@ -68,13 +68,13 @@ The analysis results are summarizes as follows:
 6. Mondays see the highest amount of sedentary behavior, peaking at 16.5 hours of sitting.
 7. Identified two distinct hourly peaks in the 24-hour cycle. The "Lunch Break" Peak: A moderate spike in activity occurs between 12:00 PM and 2:00 PM. The "After-Work" Peak: The massive, undisputed peak of user activity occurs between 5:00 PM and 7:00 PM, hitting its absolute highest point at 18:00 (6:00 PM).
 
-### Share Phase
+## Share Phase
 Below is a snapshot of the Dashboard (you can as well see an attached video of the Dashboard on the file section)
 <img width="1378" height="742" alt="image" src="https://github.com/user-attachments/assets/637c8d8e-f2db-4109-a44e-ebe5630e88ab" />
 
 
-### Act Phase
-#### Recommendations
+## Act Phase
+### Recommendations
 To drive user engagement, improve consumer health outcomes, and optimize digital marketing spend, I recommend implementing the following four data-driven strategies within the Bellabeat App ecosystem.
 
 1. The "Pre-Peak" Push Notification Strategy (Time-Based Targeting)
@@ -101,7 +101,7 @@ To drive user engagement, improve consumer health outcomes, and optimize digital
 - Mon/Tue & Fri/Sat: Spend heavily on high-energy, active lifestyle ads and fitness challenges to capitalize on existing motivation.
 - Sundays: Slash the ad budget for fitness gear. Shift all Sunday marketing copy to focus on "Rest, Recovery, and Self-Care," heavily promoting the Bellabeat App's stress-tracking and mindfulness features.
 
-#### Next Steps & Additional Data Required
+### Next Steps & Additional Data Required
 To ensure these recommendations perfectly align with Bellabeat’s specific brand identity, the following next steps should be taken:
 - Demographic Verification: The public Kaggle dataset lacked gender demographics. Bellabeat must pull a sample of its own first-party female user data to verify if these exact hourly peaks (6:00 PM) hold true specifically for women.
 - A/B Testing: Roll out the "Pre-Peak" push notifications to a small test group of 5,000 app users for two weeks. Measure the actual percentage increase in steps before deploying the feature globally.
